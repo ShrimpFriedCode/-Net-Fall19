@@ -290,7 +290,7 @@ def serverRUDPfileGo(HOST, PORT, FILE):
 # helper function for server file transfer on RUDP with stop and wait implementation
 def serverRUDPfileWait(HOST, PORT, FILE):
     print("server file-RUDP wait")
-    ACK = "1" # alternating bit
+    ACK = "0" # alternating bit
     buf = Queue.Queue(maxsize=0)  # buffer for file data
     # create the UDP socket, and bind it to our host IP and port #
     server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -462,7 +462,7 @@ def clientRUDPfileGo(HOST, PORT, FILE):
 # helper function for RUDP file trasnfet client side implementing stop and wait
 def clientRUDPfileWait(HOST, PORT, FILE):
     ACK = "0"  # alternating bit
-    PACK = 1  # current data packet
+    PACK = 0  # current data packet
     cli = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create connection
     buf = []  # file data buffer
     f = FILE.read(200)
