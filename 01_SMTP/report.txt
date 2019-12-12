@@ -1,0 +1,4 @@
+1. Attempting to send to a non IU email address fails, as we do not have the proper authentication to send to an 
+outside resource, as we are an unauthenticated user on the mail relay.  
+
+2. You can use any made up mail address to send, as smtp does not attempt to validate the sending address and will deliver it regardless of the supplied address. 

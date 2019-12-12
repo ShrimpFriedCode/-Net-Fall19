@@ -8,7 +8,7 @@ LIBS         = -lm -lcurl
 LIBPATHS     = 
 INCLUDEPATHS = 
 
-PROGRAMS     = smtp
+PROGRAMS     = smtp smtp_socket
 all: $(PROGRAMS)
 
 $(PROGRAMS): %: %.o
