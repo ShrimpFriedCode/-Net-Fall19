@@ -2,3 +2,28 @@
 outside resource, as we are an unauthenticated user on the mail relay.  
 
 2. You can use any made up mail address to send, as smtp does not attempt to validate the sending address and will deliver it regardless of the supplied address. 
+
+SMTP Conversation:
+
+nc mail-relay.iu.edu 25
+220 Sendmail ESMTP - IU Campus Communications Team - Mail-Relay
+HELO silo
+250 mail-relay.iu.edu Hello silo.soic.indiana.edu [129.79.247.5], pleased to meet you
+MAIL FROM:etmander@iu.edu
+250 2.1.0 etmander@iu.edu... Sender ok
+RCPT TO:etmander@iu.edu
+250 2.1.5 etmander@iu.edu... Recipient ok
+DATA
+354 Enter mail, end with "." on a line by itself
+From: etmander@iu.edu
+Subject: Test email
+To: etmander@iu.edu
+
+Hello,
+This is a test email
+-Ethan
+.
+250 2.0.0 xBCJmOHA005411 Message accepted for delivery
+QUIT
+221 2.0.0 mail-relay.iu.edu closing connection
+
